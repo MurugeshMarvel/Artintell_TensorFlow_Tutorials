@@ -22,7 +22,7 @@ y_train = [-1,-2,-3,-4]
 
 #training loop
 init = tf.global_variables_initializer()
-sess = tf.Session()
+sess = tf.Session(config=tf.ConfigProto(log_device_placement=True))
 sess.run(init)
 for i in range(1000):
     sess.run(train, {x: x_train, y:y_train})
